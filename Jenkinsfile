@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'rm -rf prakash'
                 sh 'git clone https://github.com/sunnydubey80/prakash.git'
-                sh 'docker build -t sundocker12345/test -f Dockerfile .'
-                sh 'docker push sundocker12345/test'
+                sh 'docker build -t sundocker12345/test:${BUILD_NUMBER} -f Dockerfile .'
+                sh 'docker push sundocker12345/test:${BUILS_NUMBER}
                 sh 'ls' 
-                sh 'pwd'
-                sh 'rm -rf prakash' 
+                sh 'pwd' 
             }
         }
     }
