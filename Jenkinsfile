@@ -8,7 +8,8 @@ pipeline {
                 sh 'docker build -t sundocker12345/test -f Dockerfile .'
                 sh 'docker push sundocker12345/test'
                 sh 'ls' 
-                sh 'pwd' 
+                sh 'pwd'
+                sh 'rm -rf prakash' 
             }
         }
     }
